@@ -1,0 +1,30 @@
+{
+	"name": "CategoryWatch",
+	"version": "3.0",
+	"author": [
+		"Chen, Nad, and Hershberger"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:CategoryWatch",
+	"descriptionmsg": "categorywatch-desc",
+	"license-name": "GPL-2.0-or-later",
+	"type": "other",
+	"requires": {
+		"MediaWiki": ">= 1.43"
+	},
+	"AutoloadNamespaces": {
+		"CategoryWatch\\": "src/"
+	},
+	"MessagesDirs": {
+		"CategoryWatch": "i18n"
+	},
+	"DefaultUserOptions": {
+		"echo-subscriptions-email-categorywatch": true,
+		"echo-subscriptions-web-categorywatch": true
+	},
+	"Hooks": {
+		"BeforeCreateEchoEvent": "CategoryWatch\\Hook::onBeforeCreateEchoEvent",
+		"EchoGetBundleRules": "CategoryWatch\\Hook::onEchoGetBundleRules",
+		"LinksUpdateComplete": "CategoryWatch\\Hook::onLinksUpdateComplete"
+	},
+	"manifest_version": 2
+}
